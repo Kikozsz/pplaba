@@ -1,1 +1,1 @@
-print('7,tlf,l,tltfd,tdt,ldt')
+print('676767')
