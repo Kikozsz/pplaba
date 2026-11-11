@@ -126,7 +126,7 @@ class BookingSystem:
 
         booking = self.bookings[booking_id]
 
-        if not booking.active:
+    if not booking.active:
             raise ValueError("Бронирование уже отменено.")
 
         booking.active = True
@@ -322,5 +322,4 @@ def main():
         except ValueError as error:
             print("Ошибка:", error)
 
-if __name__ == "__main__":
-    main()
+main()
