@@ -33,3 +33,19 @@ class BookingSystem:
         self.trips = {}
         self.bookings = {}
         self.next_booking_id = {}
+
+    def add_transport(self, transport):
+    def add_trip():
+    def show_trips(self):
+        if self.trips:
+            for trip in self.trips.values():
+                transport = self.transports[trip.transport_id]
+                print( f"\nРейс №{trip.id}: "
+                      f"{trip.departure_city} -> {trip.arrival_city}")
+                #trans
+                #depar
+                #arr
+                #...
+    def search_trips(self, departure, arrival, price):
+        result = []
+        for trip in self.trips
