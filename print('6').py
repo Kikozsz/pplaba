@@ -35,6 +35,7 @@ class BookingSystem:
         self.next_booking_id = {}
 
     def add_transport(self, transport):
+
     def add_trip():
     def show_trips(self):
         if self.trips:
@@ -48,4 +49,28 @@ class BookingSystem:
                 #...
     def search_trips(self, departure, arrival, price):
         result = []
-        for trip in self.trips
+        for trip in self.trips#...
+        return result
+    
+    def get_free_seats(self, trip_id):
+        if trip_id not in self.trips:
+            raise ValueError("Рейс не найден.")
+
+        trip = self.trips[trip_id]
+        transport = self.transports[trip.transport_id]
+
+        occupied = set()
+    def book_ticket():
+    def cancel_booking(self, booking_id):
+    def show_passenger_bookings(self, passenger_name):
+
+def read_datetime(prompt):
+
+def create_data(system):
+
+
+
+def main():
+    system = BookingSystem()
+    create_data(system)
+    while True
