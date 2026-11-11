@@ -12,7 +12,7 @@ class Transport:
 @dataclass
 class Trip:
     id: int
-    transport: int
+    transport_id: int
     departure_city: str
     arrival_city: str
     departure_time: datetime
@@ -39,7 +39,7 @@ class BookingSystem:
     def add_transport(self, transport):
         if transport.capacity <= 0:
             raise ValueError("Количество мест должно быть больше нуля.")
-        if tansport.id in self.transports:
+        if transport.id in self.transports:
             raise ValueError("Такой транспорт уже существует.")
         self.transports[transport.id] = transport
 
@@ -124,12 +124,12 @@ class BookingSystem:
          if booking_id not in self.bookings:
             raise ValueError("Бронирование не найдено.")
 
-        booking = self.bookings[booking_id]
+         booking = self.bookings[booking_id]
 
-    if not booking.active:
+         if not booking.active:
             raise ValueError("Бронирование уже отменено.")
 
-        booking.active = True
+         booking.active = False
     
     def show_passenger_bookings(self, passenger_name):
         found = False
@@ -174,7 +174,7 @@ def create_data(system):
         )
 
     )
-     system.add_trip(
+    system.add_trip(
         Trip(
             2, 2, "Москва", "Казань",
             tomorrow.replace(hour=10, minute=0),
@@ -192,7 +192,7 @@ def create_data(system):
         )
     )
 
-     system.add_trip(
+    system.add_trip(
         Trip(
             4, 1, "Казань", "Самара",
             tomorrow.replace(hour=14, minute=0),
@@ -288,7 +288,7 @@ def main():
 
                 print("Транспорт добавлен.")
 
-             elif choice == "8":
+            elif choice == "8":
                 trip_id = int(input("ID рейса: "))
                 transport_id = int(input("ID транспорта: "))
                 departure_city = input("Город отправления: ")
@@ -321,5 +321,4 @@ def main():
 
         except ValueError as error:
             print("Ошибка:", error)
-
 main()
