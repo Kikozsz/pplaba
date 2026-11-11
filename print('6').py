@@ -11,14 +11,19 @@ class Transport:
 @dataclass
 class Trip:
     id: int
-    : str
-    : str
-    : str
-    : datetime
-    : datetime
-    : int
+    transport: str
+    departure_city: str
+    arrival_city: str
+    departure_time: datetime
+    arrival_time: datetime
+    price: int
+
 @dataclass
 class Booking:
+    id: int
+    passenger_name: str
+    seat_number: int
+    active: bool = True
 
 #sistema br osnovnaya
 @dataclass
